@@ -10,4 +10,18 @@ class PagoAlquiler extends Model
     use HasFactory;
 
     protected $table = 'pago_alquiler';
+
+    //Relacion uno a muchos
+    
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function tipobanco(){
+        return $this->belongsTo('App\Models\TipoBanco');
+    }
+
+    public function saldoAlquileres(){
+        return $this->hasMany('App\Models\SaldoAlquiler');
+    }
 }

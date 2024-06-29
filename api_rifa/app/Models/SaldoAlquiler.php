@@ -10,4 +10,8 @@ class SaldoAlquiler extends Model
     use HasFactory;
 
     protected $table = 'saldo_alquiler';
+
+    public function pagoAlquiler(){
+        return $this->belongsTo('App\Models\PagoAlquiler');
+    }
 }
